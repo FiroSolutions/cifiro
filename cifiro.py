@@ -99,7 +99,7 @@ def donodejs():
 				if lifes.get(x).get('result') == 'not found':
 					print('Library:',x,'\x1b[1;32;40m','nothing found', '\x1b[0m')
 				else:
-					print(json.dumps(lifes.get(mog[0][0]).get('result'), indent=4))
+					print(json.dumps(lifes.get(x).get('result'), indent=4))
 	return True
 
 
