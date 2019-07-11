@@ -43,3 +43,10 @@ Checking library base64 version 0.8
 Result:                                                                         
  nothing found                                                                  
 ```
+
+
+### Apikey as a system argument supported
+```
+$ wget https://raw.githubusercontent.com/firosolutions/cifiro/master/cifiro.py
+$ python3.6 cifiro.py apikey=myapigoeshere
+```
