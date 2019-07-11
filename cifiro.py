@@ -87,7 +87,7 @@ def dorust():
 					if linje[:1] == '[' and sant != z:
 						sant = False
 					if len(linje) > 3:
-						mog = re.findall(r'^([a-z-A-Z-0-9]{1,})\s\=\s\"([0-9-.]{0,})\"$', linje)
+						mog = re.findall(r'^([a-z-A-Z-0-9-_]{1,})\s\=\s\"(\*|[0-9-.]{1,})\"', linje)
 						if len(mog) >=1:
 							print('Checking library',mog[0][0], 'version',mog[0][1])
 							print('Result:')
