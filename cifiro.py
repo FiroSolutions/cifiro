@@ -9,6 +9,17 @@ apinyckeln = ''
 
 def canihazapikey():
 	global apinyckeln #cache apikey
+	if len(sys.argv) == 2 and "apikey=" in str(sys.argv):
+		print("Checking api key")
+		right = sys.argv[1].split('apikey=')[1]
+		if not 'Invalid' in requests.post("https://api.firosolutions.com/latest", json={'apikey': str(right)}).text:
+			print("Api Key accepted")
+			apinyckeln = right
+			with open(str(Path.home())+'/.cifiro', 'w+b') as minfil:
+				minfil.write(right.encode())
+			return True
+
+
 	if not os.path.isfile(str(Path.home())+"/.cifiro"):
 		print('no api key found :-(')
 		print('Login and go to profile in order to view your APi key')
